@@ -1,0 +1,26 @@
+.wp-block-mp-blocks-process-steps {
+    display: block;
+
+    .block-editor-inner-blocks>.block-editor-block-list__layout {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        
+        @media (min-width: 782px) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    //Editor workaround – when the parent block is selected, the editor adds a (+) inserter as the last item, 
+    //so we need to target the second-to-last element instead of the actual last one.
+    &.is-selected {
+        .wp-block-mp-blocks-process-step {
+            &:nth-last-child(2) {
+                &::before {
+                    width: 0;
+                    height: 0;
+                }
+            }
+        }
+    }
+}

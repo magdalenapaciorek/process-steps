@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "mp-blocks/process-steps",
+	"version": "0.1.0",
+	"title": "Process Steps",
+	"category": "widgets",
+	"icon": "list-view",
+	"description": "A collection of items organized in a specified order, that can be used to visually present a step-by-step process.",
+	"allowedBlocks": [ "mp-blocks/process-step" ],
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": ["full", "wide"]
+	},
+	"attributes": {
+		"stepHeadingLevel": {
+			"type": "number",
+			"default": 3
+		},
+		"stepBackgroundColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"stepTextColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"stepBorderColor": {
+			"type": "string",
+			"default": "#cccccc"
+		}
+	},
+	"providesContext": {
+        "mp-blocks/stepHeadingLevel": "stepHeadingLevel"
+    },
+	"textdomain": "process-steps",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

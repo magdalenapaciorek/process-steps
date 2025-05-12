@@ -1,0 +1,9 @@
+.wp-block-mp-blocks-process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    @media ( min-width: 782px ) {
+        flex-wrap: nowrap;
+    }
+}

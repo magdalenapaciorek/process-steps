@@ -1,0 +1,60 @@
+//use CSS variables set inline in the block parent
+
+.wp-block-mp-blocks-process-step {
+    text-align: center;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    color: var(--step-text-color);
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        width: 0;
+        height: 0;
+        background: var(--step-border-color);
+        z-index: 0;
+
+        @media (min-width: 782px) {
+            height: 1px;
+            width: calc(100% + 1em); //100% plus the gap
+        }
+    }
+
+    //this doesn't work in the editor when the parent block is selected 
+    //because it adds the (+) appender as the last element - fixed in the editor.scss of a parent
+    &:last-of-type {
+        &::before {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    &-number {
+        border: 1px solid var(--step-border-color);
+        border-radius: 50%;
+        background: var(--step-background-color);
+        font-size: 25px;
+        font-weight: bold;
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        z-index: 1;
+    }
+
+    &-content {
+        border: 1px solid var(--step-border-color);
+        background: var(--step-background-color);
+        height: 100%;
+        padding: 5%;
+    }
+}
